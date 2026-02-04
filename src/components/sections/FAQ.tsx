@@ -6,34 +6,34 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Qual o prazo típico de um projeto?",
+    question: "Qual o investimento mínimo para um projeto?",
     answer:
-      "Depende do escopo e complexidade. Em média: landing pages e sites levam 2-4 semanas, MVPs e aplicativos de 6-12 semanas, e sistemas complexos de 12-24 semanas. Fazemos um levantamento detalhado antes de dar qualquer prazo. Preferimos ser realistas do que criar expectativas erradas.",
+      "Nossos projetos começam a partir de R$30.000. O valor depende da complexidade, prazo e escopo do produto. Trabalhamos com sprints e entregas incrementais.",
   },
   {
-    question: "Como funciona o processo de trabalho?",
+    question: "Quanto tempo leva para entregar um MVP?",
     answer:
-      "Trabalhamos em sprints de 2 semanas com entregas incrementais. Você participa das dailies (se quiser), tem acesso ao board de tasks e ao ambiente de staging para acompanhar o progresso em tempo real. Comunicação direta, sem intermediários.",
+      "Um MVP típico leva de 6 a 12 semanas. Começamos com uma sprint de discovery de 2 semanas para alinhar expectativas e definir o escopo ideal.",
   },
   {
-    question: "Vocês oferecem manutenção após a entrega?",
+    question: "Vocês trabalham com quais tecnologias?",
     answer:
-      "Sim! Incluímos 30 dias de suporte gratuito para ajustes e correções. Após esse período, oferecemos planos de manutenção mensais ou você pode nos chamar sob demanda. Também entregamos documentação completa para seu time evoluir o produto.",
+      "React, Next.js, React Native, Node.js, Python, AWS, GCP e mais. Escolhemos a stack ideal para cada projeto baseado em requisitos técnicos e de negócio.",
   },
   {
-    question: "Qual o investimento mínimo para começar?",
+    question: "Como funciona o suporte pós-entrega?",
     answer:
-      "Projetos começam a partir de R$25.000 para MVPs e podem chegar a R$150.000+ para sistemas complexos. O valor exato depende do escopo. Fazemos uma proposta detalhada após o discovery inicial — sem custo e sem compromisso.",
+      "Oferecemos 30 dias de suporte gratuito após a entrega. Depois disso, temos planos de manutenção contínua para garantir que seu produto siga evoluindo.",
   },
   {
-    question: "Vocês trabalham com minha identidade visual existente?",
+    question: "Posso acompanhar o andamento do projeto?",
     answer:
-      "Com certeza. Se você já tem brand guidelines, trabalhamos dentro delas. Se não tem, podemos criar junto ou focar só no produto. Flexibilidade total.",
+      "Sim. Transparência é um dos nossos principais valores. Você terá acesso ao repositório de código, board de tarefas e calls semanais de alinhamento.",
   },
   {
-    question: "Em quais tecnologias vocês trabalham?",
+    question: "Qual a relação entre Forma Studio e Codnodo?",
     answer:
-      "Nosso stack principal: Front-end com React, Next.js e React Native; Back-end com Node.js, Python e Go; Cloud com AWS, GCP e Azure; e IA com OpenAI, LangChain e modelos open-source. Mas escolhemos a tech pela necessidade do projeto, não por preferência pessoal.",
+      "A Forma é o braço de venture building e produtos do ecossistema Codnodo. Enquanto a Codnodo foca em serviços de desenvolvimento, a Forma constrói e escala produtos próprios e de parceiros.",
   },
 ];
 
@@ -41,87 +41,71 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#0A0A0A] py-24 md:py-32">
+    <section className="bg-[#F5F3EF] py-24 md:py-32">
       <div className="mx-auto max-w-[1200px] px-6 md:px-8">
-        <div className="flex flex-col gap-16 md:flex-row md:gap-20">
-          {/* Left column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="shrink-0 md:w-[340px]"
-          >
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.1em] text-[#6B6B6B]">
-              FAQ
-            </p>
-            <h2 className="mb-6 text-3xl font-semibold leading-tight tracking-tight text-white md:text-[40px]">
-              Perguntas Frequentes
-            </h2>
-            <p className="mb-8 leading-relaxed text-[#A3A3A3]">
-              Respostas às dúvidas mais comuns sobre nosso trabalho.
-            </p>
-            <a
-              href="#cta"
-              className="inline-flex rounded-lg border border-[#404040] bg-transparent px-6 py-3 text-sm font-medium text-white transition-all hover:border-white hover:bg-white/5"
-            >
-              Ainda tem dúvidas? Fale com a gente
-            </a>
-          </motion.div>
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.1em] text-[#8A8A8A]">
+            FAQ
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight tracking-tight text-[#2D2D2D] md:text-[40px]">
+            Perguntas frequentes
+          </h2>
+        </motion.div>
 
-          {/* Right column - Accordion */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex-1"
-          >
-            <div className="flex flex-col gap-3">
-              {faqs.map((faq, i) => (
-                <div
-                  key={i}
-                  className={`overflow-hidden rounded-xl border transition-colors duration-300 ${
-                    openIndex === i
-                      ? "border-[#404040] bg-[#111111]"
-                      : "border-[#262626] bg-[#111111] hover:border-[#404040]"
+        {/* Accordion */}
+        <div className="mx-auto max-w-[800px] space-y-4">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="overflow-hidden rounded-2xl border-2 border-black bg-white"
+            >
+              <button
+                onClick={() =>
+                  setOpenIndex(openIndex === index ? null : index)
+                }
+                className="flex w-full items-center justify-between px-6 py-5 text-left"
+              >
+                <span className="pr-4 font-medium text-[#2D2D2D]">
+                  {faq.question}
+                </span>
+                <ChevronDown
+                  size={20}
+                  className={`flex-shrink-0 text-[#8AB661] transition-transform duration-300 ${
+                    openIndex === index ? "rotate-180" : ""
                   }`}
-                >
-                  <button
-                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                    className="flex w-full items-center justify-between gap-4 p-6"
+                />
+              </button>
+
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
                   >
-                    <span className="text-left font-medium text-white">
-                      {faq.question}
-                    </span>
-                    <ChevronDown
-                      size={20}
-                      className={`shrink-0 text-[#6B6B6B] transition-transform duration-300 ${
-                        openIndex === i ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {openIndex === i && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-6 pb-6">
-                          <p className="leading-relaxed text-[#A3A3A3]">
-                            {faq.answer}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+                    <div className="border-t border-[#E5E5E5] px-6 py-5">
+                      <p className="leading-relaxed text-[#5A5A5A]">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

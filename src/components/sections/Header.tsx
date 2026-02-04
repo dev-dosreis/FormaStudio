@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
-  { label: "Portfólio", href: "#portfolio" },
+  { label: "Cases", href: "#portfolio" },
   { label: "Processo", href: "#processo" },
 ];
 
@@ -14,7 +14,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-20 border-b border-white/5 bg-[#0A0A0A]/80 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 h-20 border-b border-black/5 bg-[#F5F3EF]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-6 md:px-8">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
@@ -31,15 +31,15 @@ export default function Header() {
               width="36"
               height="36"
               rx="4"
-              stroke="white"
+              stroke="#2D2D2D"
               strokeWidth="2"
             />
-            <line x1="14" y1="12" x2="14" y2="28" stroke="white" strokeWidth="2" />
-            <line x1="20" y1="12" x2="20" y2="28" stroke="white" strokeWidth="2" />
-            <line x1="26" y1="12" x2="26" y2="28" stroke="white" strokeWidth="2" />
-            <line x1="10" y1="20" x2="30" y2="20" stroke="white" strokeWidth="2" />
+            <line x1="14" y1="12" x2="14" y2="28" stroke="#2D2D2D" strokeWidth="2" />
+            <line x1="20" y1="12" x2="20" y2="28" stroke="#2D2D2D" strokeWidth="2" />
+            <line x1="26" y1="12" x2="26" y2="28" stroke="#2D2D2D" strokeWidth="2" />
+            <line x1="10" y1="20" x2="30" y2="20" stroke="#2D2D2D" strokeWidth="2" />
           </svg>
-          <span className="text-lg font-semibold tracking-tight text-white">
+          <span className="text-lg font-semibold tracking-tight text-[#2D2D2D]">
             Forma
           </span>
         </a>
@@ -50,7 +50,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-[#A3A3A3] transition-colors hover:text-white"
+              className="text-sm font-medium text-[#5A5A5A] transition-colors hover:text-[#2D2D2D]"
             >
               {item.label}
             </a>
@@ -60,15 +60,15 @@ export default function Header() {
         {/* Desktop CTA */}
         <a
           href="#cta"
-          className="hidden rounded-lg bg-white px-6 py-3 text-sm font-medium text-[#0A0A0A] transition-all hover:-translate-y-0.5 hover:bg-[#E5E5E5] md:inline-flex"
+          className="hidden rounded-full bg-[#8AB661] px-6 py-3 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-[#7AA551] hover:shadow-[0_8px_24px_rgba(138,182,97,0.3)] md:inline-flex"
         >
-          Falar com especialista
+          Agendar conversa
         </a>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="text-white md:hidden"
+          className="text-[#2D2D2D] md:hidden"
           aria-label="Menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -83,7 +83,7 @@ export default function Header() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 top-20 z-40 flex flex-col bg-[#0A0A0A] px-6 pt-8 md:hidden"
+            className="fixed inset-0 top-20 z-40 flex flex-col bg-[#F5F3EF] px-6 pt-8 md:hidden"
           >
             <nav className="flex flex-col gap-6">
               {navItems.map((item) => (
@@ -91,7 +91,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-2xl font-medium text-[#A3A3A3] transition-colors hover:text-white"
+                  className="text-2xl font-medium text-[#5A5A5A] transition-colors hover:text-[#2D2D2D]"
                 >
                   {item.label}
                 </a>
@@ -100,9 +100,9 @@ export default function Header() {
             <a
               href="#cta"
               onClick={() => setMobileOpen(false)}
-              className="mt-10 inline-flex justify-center rounded-lg bg-white px-6 py-4 text-base font-medium text-[#0A0A0A] transition-all hover:bg-[#E5E5E5]"
+              className="mt-10 inline-flex justify-center rounded-full bg-[#8AB661] px-6 py-4 text-base font-medium text-white transition-all hover:bg-[#7AA551]"
             >
-              Falar com especialista
+              Agendar conversa
             </a>
           </motion.div>
         )}

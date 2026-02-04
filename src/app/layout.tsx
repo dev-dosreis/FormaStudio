@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Forma Studio | Software & Produto para Empresas que Escalam",
+  title: "Forma Studio | Venture Building & Produtos Digitais | Ecossistema Codnodo",
   description:
-    "Studio de software que ajuda empresas de R$1M a R$20M a destravar crescimento através de tecnologia e produto. Do MVP ao scale.",
+    "Braço de venture building e produtos do ecossistema Codnodo. Criamos, desenvolvemos e escalamos produtos digitais — do MVP ao Series A.",
   keywords:
-    "software studio, desenvolvimento, produto digital, MVP, startup, escala",
+    "venture building, produtos digitais, NornScore, Harpia API, Codnodo, desenvolvimento, software studio",
   openGraph: {
-    title: "Forma Studio",
-    description: "Software & Produto para Empresas que Escalam",
+    title: "Forma Studio | Ecossistema Codnodo",
+    description: "Venture Building & Produtos Digitais — do MVP ao Series A",
     url: "https://forma.studio",
     siteName: "Forma Studio",
     type: "website",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Forma Studio",
-    description: "Software & Produto para Empresas que Escalam",
+    description: "Venture Building & Produtos Digitais — do MVP ao Series A",
   },
   robots: "index, follow",
 };
@@ -56,7 +56,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-[#0A0A0A] font-sans antialiased">{children}</body>
+      <body className="bg-[#F5F3EF] font-sans antialiased">{children}</body>
     </html>
   );
 }

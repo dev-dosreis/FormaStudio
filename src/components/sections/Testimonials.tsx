@@ -39,7 +39,7 @@ export default function Testimonials() {
   }, [paused, next]);
 
   return (
-    <section className="bg-[#0A0A0A] py-24 md:py-32">
+    <section className="bg-[#F5F3EF] py-24 md:py-32">
       <div className="mx-auto max-w-[1200px] px-6 md:px-8">
         {/* Section header */}
         <motion.div
@@ -49,10 +49,10 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.1em] text-[#6B6B6B]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.1em] text-[#8A8A8A]">
             Depoimentos
           </p>
-          <h2 className="text-3xl font-semibold leading-tight tracking-tight text-white md:text-[40px]">
+          <h2 className="text-3xl font-semibold leading-tight tracking-tight text-[#2D2D2D] md:text-[40px]">
             O que nossos clientes dizem
           </h2>
         </motion.div>
@@ -70,23 +70,23 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4 }}
-              className="rounded-3xl border border-[#262626] bg-[#111111] p-10 md:p-12"
+              className="rounded-3xl border-2 border-black bg-white p-10 md:p-12"
             >
-              <div className="mb-8 text-5xl leading-none text-[#6B6B6B] opacity-30">
+              <div className="mb-8 text-5xl leading-none text-[#E5E5E5]">
                 &ldquo;
               </div>
-              <p className="mb-8 text-lg leading-[1.8] text-white">
+              <p className="mb-8 text-lg leading-[1.8] text-[#2D2D2D]">
                 {testimonials[current].text}
               </p>
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-sm font-bold text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#8AB661] text-sm font-bold text-white">
                   {testimonials[current].initials}
                 </div>
                 <div>
-                  <p className="font-semibold text-white">
+                  <p className="font-semibold text-[#2D2D2D]">
                     {testimonials[current].name}
                   </p>
-                  <p className="text-sm text-[#6B6B6B]">
+                  <p className="text-sm text-[#8A8A8A]">
                     {testimonials[current].role}
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export default function Testimonials() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "w-6 bg-white" : "w-2 bg-[#404040]"
+                  i === current ? "w-6 bg-[#8AB661]" : "w-2 bg-[#E5E5E5]"
                 }`}
                 aria-label={`Depoimento ${i + 1}`}
               />
